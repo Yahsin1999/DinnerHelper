@@ -2,7 +2,9 @@
 
 /* 基礎設定 */
 body {
-    font-family: '微軟正黑體', 'Microsoft JhengHei', 'Comic Sans MS', cursive, sans-serif; /* 增加手寫風格字體 */
+    /* 將 'Zen Maru Gothic' 設定為首選字體 */
+    font-family: 'Zen Maru Gothic', '微軟正黑體', 'Microsoft JhengHei', sans-serif; 
+    
     background-color: #ffe0b2; /* 淺橙色背景，像餅乾或麵包的顏色 */
     color: #4a2c14; /* 深棕色文字，像巧克力或咖啡 */
     margin: 0;
@@ -16,7 +18,7 @@ body {
     padding: 40px;
     border-radius: 25px; /* 大圓角，增加可愛感 */
     box-shadow: 0 10px 30px rgba(255, 152, 0, 0.3); /* 溫暖的陰影效果 */
-    border: 5px dashed #ff9800; /* 虛線邊框，像蛋糕裝飾 */
+    border: 5px dashed #ff9900a9; /* 虛線邊框，像蛋糕裝飾 */
 }
 
 h1 { 
@@ -35,6 +37,7 @@ h2 {
 }
 p {
     font-size: 1.1em;
+    text-align: center;
 }
 
 /* 篩選器樣式 */

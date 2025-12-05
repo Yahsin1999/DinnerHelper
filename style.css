@@ -242,3 +242,76 @@ p {
     display: inline-block;
     border-radius: 8px;
 }
+/* ======================================= */
+/* 響應式設計 (RWD) 調整 */
+/* ======================================= */
+
+@media (max-width: 768px) {
+    /* 針對平板和手機 */
+    body {
+        padding: 15px; /* 減少主頁面邊距 */
+    }
+
+    .container {
+        padding: 20px; /* 減少內部填充 */
+        border-radius: 15px;
+        border-width: 3px; /* 縮小邊框 */
+    }
+
+    h1 {
+        font-size: 2em; /* 縮小標題 */
+    }
+
+    /* 篩選器佈局優化 */
+    .filters {
+        padding: 15px;
+    }
+    
+    /* 讓篩選器標籤在小螢幕上平均分佈 */
+    .type-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px; /* 減少按鈕間距 */
+    }
+
+    .type-tags button {
+        /* 讓按鈕在小螢幕上佔用更多空間，但不會溢出 */
+        flex-grow: 1; 
+        max-width: 48%; /* 讓兩到三個按鈕可以並排 */
+        margin: 5px;
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    /* 推薦結果卡片優化 */
+    .meal-card.single-card {
+        width: 95%; /* 佔滿手機寬度 */
+        max-width: none;
+        padding: 25px;
+        border-width: 4px;
+    }
+
+    .meal-card h4 { 
+        font-size: 1.5em; /* 縮小卡片內的標題 */
+    }
+    
+    /* 主按鈕優化 */
+    #recommend-btn {
+        padding: 15px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 針對小型手機 */
+    .type-tags button {
+        max-width: 100%; /* 讓按鈕垂直堆疊 */
+        margin: 5px 0;
+    }
+
+    /* 確保滑塊標籤提示在極小螢幕上也能正常顯示 */
+    .filter-group p {
+        font-size: 0.8em;
+    }
+}

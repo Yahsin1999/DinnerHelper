@@ -1,0 +1,241 @@
+/* 可愛食慾風格：style.css */
+
+/* 基礎設定 */
+body {
+    font-family: '微軟正黑體', 'Microsoft JhengHei', 'Comic Sans MS', cursive, sans-serif; /* 增加手寫風格字體 */
+    background-color: #ffe0b2; /* 淺橙色背景，像餅乾或麵包的顏色 */
+    color: #4a2c14; /* 深棕色文字，像巧克力或咖啡 */
+    margin: 0;
+    padding: 30px;
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 25px; /* 大圓角，增加可愛感 */
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.3); /* 溫暖的陰影效果 */
+    border: 5px dashed #ff9800; /* 虛線邊框，像蛋糕裝飾 */
+}
+
+h1 { 
+    color: #e91e63; /* 鮮豔的粉紅色 */
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 0 #fff3e0; /* 描邊效果 */
+    margin-bottom: 5px;
+}
+h2 { 
+    border-bottom: 3px solid #ff9800; 
+    padding-bottom: 10px; 
+    margin-top: 30px; 
+    color: #ff9800; 
+    text-align: center;
+}
+p {
+    font-size: 1.1em;
+}
+
+/* 篩選器樣式 */
+.filters {
+    padding: 25px;
+    border: 3px solid #ffcc80;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    background-color: #fffaf0; /* 奶油白色 */
+}
+
+.filters h3 {
+    color: #4a2c14;
+}
+
+/* 預算滑塊 */
+#price-range { 
+    -webkit-appearance: none; /* 移除瀏覽器預設樣式 */
+    width: 100%; 
+    height: 12px; /* 增加軌道高度 */
+    margin: 15px 0; 
+    background: #ffcc80; /* 軌道背景色 (柔和橘) */
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 確保滑塊的軌道在所有瀏覽器中都一致 */
+#price-range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 12px;
+    background: #ffcc80;
+    border-radius: 6px;
+}
+#price-range::-moz-range-track {
+    width: 100%;
+    height: 12px;
+    background: #ffcc80;
+    border-radius: 6px;
+}
+/* ---------------------------------------------------- */
+/* 預算滑塊 (穩定版) */
+/* ---------------------------------------------------- */
+.slider-wrapper {
+    position: relative; /* 這是絕對定位 Emoji 的容器 */
+    margin: 15px 0 35px 0; /* 增加底部空間給 Emoji 陰影 */
+}
+
+#price-range { 
+    -webkit-appearance: none; 
+    width: 100%; 
+    height: 12px; 
+    background: #ffcc80; 
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0; /* 清除原生 margin */
+    z-index: 10; /* 確保滑塊在 Emoji 下方，但能正常操作 */
+    opacity: 0.99; /* 讓滑塊半透明，但保留點擊功能 */
+}
+
+/* 隱藏並美化原生滑塊拇指 */
+#price-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    /* 我們需要一個極小的可見區域來觸發點擊，但主要視覺由 Emoji 取代 */
+    width: 1px; 
+    height: 1px;
+    background: transparent; 
+}
+#price-range::-moz-range-thumb {
+    width: 1px; 
+    height: 1px;
+    background: transparent; 
+    border: none;
+}
+
+/* 絕對定位的 Emoji 錢袋 */
+.thumb-emoji-bag {
+    position: absolute;
+    top: 50%; 
+    transform: translate(-50%, -50%); /* 確保絕對置中 */
+    
+    /* 模仿圖中的錢袋圓形 */
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+    /* 錢袋 Emoji 樣式 */
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px; /* 垂直居中 */
+    
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* 浮動陰影 */
+    z-index: 20; /* 確保 Emoji 覆蓋在軌道上 */
+    pointer-events: none; /* 關鍵！讓滑塊可以被點擊/拖曳 */
+}
+
+/* 類型標籤按鈕 */
+.type-tags button {
+    background-color: #ffccbc; /* 淺鮭魚粉 */
+    color: #4a2c14;
+    border: none;
+    padding: 10px 20px;
+    margin: 8px;
+    border-radius: 30px; /* 超級圓角 */
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-weight: bold;
+    box-shadow: 0 3px 0 #f48fb1; /* 立體感陰影 */
+}
+
+.type-tags button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 #f48fb1;
+}
+
+.type-tags button.selected {
+    background-color: #e91e63; /* 鮮豔粉紅色 */
+    color: white;
+    box-shadow: 0 0 0 #f48fb1; /* 消除陰影，製造被按下的感覺 */
+    transform: translateY(1px);
+}
+
+/* 主推薦按鈕 */
+#recommend-btn {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    margin-top: 25px;
+    background-color: #ff9800; /* 亮橘色 */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    box-shadow: 0 5px 0 #e65100; /* 立體陰影 */
+}
+
+#recommend-btn:hover { 
+    background-color: #ffb74d; 
+    box-shadow: 0 2px 0 #e65100;
+    transform: translateY(3px);
+}
+
+/* 推薦卡片樣式 */
+.recommendations-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.meal-card {
+    /* 移除單卡片樣式，讓它作為統一風格的基礎 */
+    background: #fff8e1; /* 奶黃色背景 */
+    border: 1px solid #ffcc80;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.meal-card:hover { 
+    transform: scale(1.05); /* 輕微放大效果 */
+    box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4);
+}
+
+/* 單張卡片樣式調整 (現在只顯示一張) */
+.meal-card.single-card {
+    width: 80%; 
+    max-width: 450px;
+    padding: 40px;
+    border: 6px solid #e91e63; /* 粉紅色的粗邊框 */
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.4);
+}
+
+
+.meal-card h3 {
+    color: #ff9800; /* 橘色標語 */
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+.meal-card h4 { 
+    color: #e91e63; 
+    margin-top: 0; 
+    font-size: 1.8em;
+    text-shadow: 1px 1px 0 #fff;
+}
+.meal-card p { margin: 8px 0; }
+.meal-card .price { 
+    font-weight: bolder; 
+    color: #4caf50; /* 鮮綠色 */
+    font-size: 1.4em;
+    padding: 5px 10px;
+    background-color: #c8e6c9;
+    display: inline-block;
+    border-radius: 8px;
+}

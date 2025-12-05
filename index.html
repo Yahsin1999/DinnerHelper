@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晚餐決策小幫手 - 今天吃什麼？</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💖 吃飯囉！💖</h1>
+        <p>飢餓偵測！小幫手會根據您的心情和預算，找到最美味的命定晚餐！</p>
+    
+    </div>
+        
+    <div class="filter-group">
+        <h3>預算範圍：<span id="price-display">45 - 280</span> 元</h3>
+            <div class="slider-wrapper">
+                <input type="range" id="price-range" min="45" max="280" value="280">
+                <span id="thumb-emoji" class="thumb-emoji-bag">💰</span>
+            </div>
+
+            <div class="filter-group">
+                <h3>餐點類型：</h3>
+                <div class="type-tags" id="type-tags">
+                    </div>
+            </div>
+            
+            <button id="recommend-btn">🚀 立即推薦</button>
+        </div>
+        
+        <hr>
+
+        <h2>今日推薦餐點</h2>
+        <div class="recommendations-container" id="recommendations-container">
+            <p class="placeholder-text">請先設定條件並點擊「立即推薦」</p>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
